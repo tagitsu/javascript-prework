@@ -6,12 +6,24 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
   width: 100px;
-  height: 40px;
+  height: 100px;
   border: 2px solid rgb(85, 251, 234);
+  border-radius: 50%;
   color: rgb(255, 82, 255);
-  font-size: 20px;
+  font-size: 40px;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7QUNDSjs7QURFQTtFQUNJLFlBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLG1DQUFBO0VBQ0Esd0JBQUE7RUFDQSxlQUFBO0FDQ0oiLCJmaWxlIjoic3R5bGUuY3NzIn0= */
+.messages {
+  width: 100%;
+  height: 40px;
+  background-color: chartreuse;
+  font-size: 20px;
+  font-family: "Major Mono Display", monospace;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7QUNDSjs7QURFQTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBQ0EsbUNBQUE7RUFDQSxrQkFBQTtFQUNBLHdCQUFBO0VBQ0EsZUFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSw0QkFBQTtFQUNBLGVBQUE7RUFDQSw0Q0FBQTtBQ0NKIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
