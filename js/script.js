@@ -25,19 +25,7 @@
 // printMessage('Twój ruch: ' + playerMove);
 
 var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
-
-
-
-
-
-
-
-
-
-var argButtonName, buttonTest, buttonRock, buttonPaper, buttonScissors;
-
-buttonTest = document.getElementById('button-test');
-buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
+var argButtonName, buttonRock, buttonPaper, buttonScissors;
 
 buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
