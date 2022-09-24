@@ -70,13 +70,19 @@ function buttonClicked(argButtonName) {
             printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);           
     }
 
-    if (playerWins == 3 || computerWins == 3) {
+    if (playerWins > 2 || computerWins > 2) {
         console.log('Koniec gry');
         clearMessages();
         if (playerWins > computerWins) {
             printMessage('Ty wygrałeś!');
+            buttonRock.disabled = true;
+            buttonPaper.disabled = true;
+            buttonScissors.disabled = true;
         } else if (playerWins < computerWins) {
             printMessage('Ja wygrałem!');
+            buttonRock.disabled = true;
+            buttonPaper.disabled = true;
+            buttonScissors.disabled = true;
         }
     } 
     
