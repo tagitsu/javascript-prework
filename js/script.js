@@ -1,6 +1,8 @@
 
 var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput, playerWins, computerWins;
 var argButtonName, buttonRock, buttonPaper, buttonScissors;
+var clickSound;
+
 
 buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
@@ -11,14 +13,19 @@ buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
 buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
 
+clickSound = new Audio('audio/click.wav');
+
 results = document.getElementById('results');
 
 playerWins = 0;
 computerWins = 0;
+
+
 /**
  *  supports one turn in the game
  */
 function buttonClicked(argButtonName) {
+    clickSound.play();
     clearMessages();
     console.log(argButtonName + ' został kliknięty');
     
