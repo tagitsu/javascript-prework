@@ -1,8 +1,13 @@
 .container {
+    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: black;
+}
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .button {
@@ -12,11 +17,17 @@
     margin: 20px;
     width: 100px;
     height: 100px;
-    border: 2px solid rgb(85, 251, 234);
-    box-shadow: 2px 4px 10px rgb(255, 255, 255);
+    border: 4px solid rgb(85, 251, 234);
+    box-shadow: 0 0 20px rgb(85, 251, 234);
     border-radius: 50%;
-    color: rgb(255, 82, 255);
-    font-size: 40px;   
+    color: fuchsia;
+    font-size: 40px;
+    
+    &:active {
+        transform: scale(0.92);
+        box-shadow: 0 0 30px yellowgreen;
+        color: yellowgreen;
+    }
 
     &__icon {
 
@@ -43,6 +54,8 @@
     height: 100px;
     font-family: 'Major Mono Display', monospace;
     background-color: yellow;
+    border-bottom: 50px solid black;
+    border-left: 50px solid transparent;
     font-size: 30px;
     text-align: center;
     line-height: 3;
