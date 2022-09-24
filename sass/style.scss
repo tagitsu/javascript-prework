@@ -1,4 +1,9 @@
+body {
+    background-color: fuchsia;
+}
+
 .container {
+    height: 100vh;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -60,4 +65,10 @@
     text-align: center;
     line-height: 3;
 
+}
+
+.robot {
+    width: 50px;
+    height: 50px;
+    position: absolute;
 }
