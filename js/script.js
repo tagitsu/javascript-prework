@@ -69,6 +69,16 @@ function buttonClicked(argButtonName) {
         };
             printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);           
     }
+
+    if (playerWins == 3 || computerWins == 3) {
+        console.log('Koniec gry');
+        clearMessages();
+        if (playerWins > computerWins) {
+            printMessage('Ty wygrałeś!');
+        } else if (playerWins < computerWins) {
+            printMessage('Ja wygrałem!');
+        }
+    } 
     
     results.innerHTML = playerWins + '-' + computerWins;
 
