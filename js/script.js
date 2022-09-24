@@ -38,14 +38,23 @@ buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); }
 
 results = document.getElementById('results');
 
-
+playerWins = 0;
+computerWins = 0;
 /**
  * Describe this function...
  */
 function buttonClicked(argButtonName) {
     clearMessages();
     console.log(argButtonName + ' został kliknięty');
-
+    
+    playerMove = argButtonName;
+    console.log('ruch gracza to: ' + playerMove);
+    randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('wylosowana liczba to: ' + randomNumber);
+    computerMove = getMoveName(randomNumber);
+    console.log('ruch komputera to: ' + computerMove);
+    displayResult(playerMove, computerMove);
+    
     /**
      * changes choosen/random number into a move name
      */
@@ -63,8 +72,7 @@ function buttonClicked(argButtonName) {
         }
     }
 
-    playerWins = 0;
-    computerWins = 0;
+    
     /**
      * analyzes possible combinations of movements
      */
@@ -72,23 +80,22 @@ function buttonClicked(argButtonName) {
         console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
         if ((argPlayerMove == 'papier' && argComputerMove == 'kamień') || (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') || (argPlayerMove == 'nożyce' && argComputerMove == 'papier')) {
             printMessage('Wygrywasz!');
-            playerWins++;
+            playerWins = playerWins + 1;   
         } else if (argPlayerMove == argComputerMove) {
             printMessage('Remis');
         } else {
             printMessage('Przegrywasz :(');
-            computerWins++;
+            computerWins = computerWins + 1;
         };
-            printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+            printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);           
     }
+    
+    results.innerHTML = playerWins + '-' + computerWins;
 
-    playerMove = argButtonName;
-    console.log('ruch gracza to: ' + playerMove);
-    randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('wylosowana liczba to: ' + randomNumber);
-    computerMove = getMoveName(randomNumber);
-    console.log('ruch komputera to: ' + computerMove);
-    displayResult(playerMove, computerMove);
+} 
+
+
+   
 
     // if (argButtonName == 'kamień') {
     //     console.log('Kamień został kliknięty');
@@ -100,8 +107,5 @@ function buttonClicked(argButtonName) {
     //     konsole.log("Sam już nie wiem co zostało kliknięte")
     // };
    
-    
-    results.innerHTML = playerWins + '-' + computerWins;
-}
 
 
