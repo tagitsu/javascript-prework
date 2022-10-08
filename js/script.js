@@ -1,24 +1,24 @@
 
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput, playerWins, computerWins;
-var argButtonName, buttonRock, buttonPaper, buttonScissors;
-var clickSound;
+var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+var argButtonName;
 
 
-buttonRock = document.getElementById('button-rock');
+
+const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
 
-buttonPaper = document.getElementById('button-paper');
+const buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
 
-buttonScissors = document.getElementById('button-scissors');
+const buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
 
-clickSound = new Audio('audio/click.wav');
+const clickSound = new Audio('audio/click.wav');
 
-results = document.getElementById('results');
+const results = document.getElementById('results');
 
-playerWins = 0;
-computerWins = 0;
+let playerWins = 0;
+let computerWins = 0;
 
 
 /**
