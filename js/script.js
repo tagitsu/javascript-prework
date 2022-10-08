@@ -14,7 +14,7 @@ const results = document.getElementById('results');
 let playerWins = 0;
 let computerWins = 0;
 
-let argMoveId, argPlayerMove, argComputerMove, playerInput, argButtonName, randomNumber, computerMove, playerMove;
+let playerInput, randomNumber, computerMove, playerMove;
 /**
  *  supports one turn in the game
  */
