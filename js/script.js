@@ -1,9 +1,3 @@
-
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
-var argButtonName;
-
-
-
 const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
 
@@ -20,7 +14,7 @@ const results = document.getElementById('results');
 let playerWins = 0;
 let computerWins = 0;
 
-
+let argMoveId, argPlayerMove, argComputerMove, playerInput, argButtonName, randomNumber, computerMove, playerMove;
 /**
  *  supports one turn in the game
  */
@@ -85,10 +79,5 @@ function buttonClicked(argButtonName) {
             buttonScissors.disabled = true;
         }
     } 
-    
     results.innerHTML = playerWins + '-' + computerWins;
-
 } 
-
-
-
