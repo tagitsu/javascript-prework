@@ -14,69 +14,63 @@ const results = document.getElementById('results');
 let playerWins = 0;
 let computerWins = 0;
 
-let playerInput, randomNumber, computerMove, playerMove;
+let randomNumber, computerMove, playerMove;
 /**
  *  supports one turn in the game
  */
 function buttonClicked(argButtonName) {
-    clickSound.play();
-    clearMessages();
-    console.log(argButtonName + ' został kliknięty');
-    
-    playerMove = argButtonName;
-    console.log('ruch gracza to: ' + playerMove);
-    randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('wylosowana liczba to: ' + randomNumber);
-    computerMove = getMoveName(randomNumber);
-    console.log('ruch komputera to: ' + computerMove);
-    displayResult(playerMove, computerMove);
-    
-    /**
-     * changes choosen/random number into a move name
-     */
-    function getMoveName(argMoveId) {
-        console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
-        if (argMoveId == 1) {
-        return 'kamień';
-        } else if (argMoveId == 2) {
-        return 'papier';
-        } else if (argMoveId == 3) {
-        return 'nożyce';
-        } else {
-        printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
-        return 'kamień';
-        }
-    }   
-    /**
-     * analyzes possible combinations of movements
-     */
-    function displayResult(argPlayerMove, argComputerMove) {
-        console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-        if ((argPlayerMove == 'papier' && argComputerMove == 'kamień') || (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') || (argPlayerMove == 'nożyce' && argComputerMove == 'papier')) {
-            printMessage('Wygrywasz!');
-            playerWins = playerWins + 1;   
-        } else if (argPlayerMove == argComputerMove) {
-            printMessage('Remis');
-        } else {
-            printMessage('Przegrywasz :(');
-            computerWins = computerWins + 1;
-        };
-            printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);           
-    }
+  clickSound.play();
+  clearMessages();
+  playerMove = argButtonName;
+  randomNumber = Math.floor(Math.random() * 3 + 1);
+  computerMove = getMoveName(randomNumber);
+  displayResult(playerMove, computerMove);
 
-    if (playerWins > 2 || computerWins > 2) {
-        clearMessages();
-        if (playerWins > computerWins) {
-            printMessage('Ty wygrałeś!');
-            buttonRock.disabled = true;
-            buttonPaper.disabled = true;
-            buttonScissors.disabled = true;
-        } else if (playerWins < computerWins) {
-            printMessage('Ja wygrałem!');
-            buttonRock.disabled = true;
-            buttonPaper.disabled = true;
-            buttonScissors.disabled = true;
-        }
-    } 
-results.innerHTML = playerWins + '-' + computerWins;
-} 
+  /**
+   * changes choosen/random number into a move name
+   */
+  function getMoveName(argMoveId) {
+    if (argMoveId == 1) {
+      return 'kamień';
+    } else if (argMoveId == 2) {
+      return 'papier';
+    } else if (argMoveId == 3) {
+      return 'nożyce';
+    } else {
+      printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
+      return 'kamień';
+    }
+  }
+  /**
+   * analyzes possible combinations of movements
+   */
+  function displayResult(argPlayerMove, argComputerMove) {
+    console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
+    if ((argPlayerMove == 'papier' && argComputerMove == 'kamień') || (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') || (argPlayerMove == 'nożyce' && argComputerMove == 'papier')) {
+      printMessage('Wygrywasz!');
+      playerWins = playerWins + 1;
+    } else if (argPlayerMove == argComputerMove) {
+      printMessage('Remis');
+    } else {
+      printMessage('Przegrywasz :(');
+      computerWins = computerWins + 1;
+    }
+    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+  }
+
+  if (playerWins > 2 || computerWins > 2) {
+    clearMessages();
+    if (playerWins > computerWins) {
+      printMessage('Ty wygrałeś!');
+      buttonRock.disabled = true;
+      buttonPaper.disabled = true;
+      buttonScissors.disabled = true;
+    } else if (playerWins < computerWins) {
+      printMessage('Ja wygrałem!');
+      buttonRock.disabled = true;
+      buttonPaper.disabled = true;
+      buttonScissors.disabled = true;
+    }
+  }
+  results.innerHTML = playerWins + '-' + computerWins;
+}
