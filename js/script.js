@@ -65,7 +65,6 @@ function buttonClicked(argButtonName) {
     }
 
     if (playerWins > 2 || computerWins > 2) {
-        console.log('Koniec gry');
         clearMessages();
         if (playerWins > computerWins) {
             printMessage('Ty wygrałeś!');
@@ -79,5 +78,5 @@ function buttonClicked(argButtonName) {
             buttonScissors.disabled = true;
         }
     } 
-    results.innerHTML = playerWins + '-' + computerWins;
+results.innerHTML = playerWins + '-' + computerWins;
 } 
